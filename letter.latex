@@ -1,9 +1,11 @@
-\documentclass[
+\documentclass[a4paper,
+    12pt,
     foldmarks=true,      % print foldmarks
     foldmarks=BTm,       % show foldmarks top, middle, bottom
     fromalign=right,     % letter head on the right
-    fromphone,           % show phone number
-    fromemail,           % show email
+    fromrule,
+    $if(phone)$fromphone,$endif$           % show phone number
+    $if(email)$fromemail,$endif$           % show email
     fromlogo,            % show logo in letter head
     version=last         % latest version of KOMA letter
 ]{scrlttr2}
@@ -41,11 +43,16 @@
     \setkomavar{fromphone}{$phone$}
     \setkomavar{fromemail}{$email$}
     \setkomavar{signature}{$author$}
+    \setkomavar{placeseparator}{, den }
 
+    $if(date)$
     \setkomavar{date}{$date$}
-    \setkomavar{place}{$place$}
+    $else$
+    \setkomavar{date}{\today}
+    $endif$
 
-    \setkomavar{subject}{$subject$}
+    \setkomavar{place}{$place$}
+    \setkomavar{subject}{$subject$ $if(subsubject)$\\$subsubject$$endif$}
 
     \begin{letter}{%
         $for(address)$

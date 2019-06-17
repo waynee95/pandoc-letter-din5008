@@ -6,12 +6,11 @@ This template allows you to write simple letters in Markdown and convert them
 into nice looking PDFs. The template is based on Koma Script and satisfies
 the German DIN 5008 norm for letters.
 
-
 ## Example
 
 A simple letter in Markdown looks like the following:
 
-```markdown
+```yaml
 ---
 author: Max Mustermann
 phone: +49 1234 56789
@@ -19,26 +18,27 @@ email: max.mustermann@beispiel.de
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
+subsubject: Untertitel vom Brief
 return-address:
- - Musterstraße
- - 12345 Berlin
+  - Musterstraße
+  - 12345 Berlin
 address:
- - Musterfirma GmbH
- - Max Mustermann
- - Musterstraße
- - 12345 Musterstadt
+  - Musterfirma GmbH
+  - Max Mustermann
+  - Musterstraße
+  - 12345 Musterstadt
 opening: Sehr geehrte Damen und Herren,
 closing: Mit freundlichen Grüßen
 encludes: Muster, Muster, Muster
-...
+---
+
 ```
 
 The compiled result will then look like this:
 
-![alt Letter](https://github.com/benedu/pandoc-letter/raw/master/example/letter.png)
+![alt Letter](/example/letter.png)
 
-You can also download the compiled PDF [here](https://github.com/benedu/pandoc-letter/raw/master/example/letter.pdf).
-
+You can also download the compiled PDF [here](/example/letter.pdf).
 
 ## Requirements
 
@@ -46,7 +46,6 @@ In order to use the template you must have installed the following components:
 
 - [Pandoc](http://pandoc.org/installing.html)
 - [LaTeX](https://latex-project.org/ftp.html)
-
 
 ## Usage
 
@@ -62,7 +61,6 @@ After creating a letter written in Markdown you can compile it into PDF with the
 following line:
 
 `pandoc letter.md -s -o letter.pdf --template="letter"`
-
 
 ## Configuration
 

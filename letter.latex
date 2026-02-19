@@ -52,7 +52,14 @@
     $endif$
 
     \setkomavar{place}{$place$}
-    \setkomavar{subject}{$subject$ $if(subsubject)$\\$subsubject$$endif$}
+    \setkomavar{subject}{%
+    $subject$%
+    $if(subsubject)$\\
+        $for(subsubject)$
+            $subsubject$$sep$\\
+        $endfor$
+    $endif$
+    }
 
     \begin{letter}{%
         $for(address)$
@@ -70,7 +77,11 @@
 
         $if(encludes)$
             \setkomavar*{enclseparator}{Anlage}
-            \encl{$encludes$}
+            \encl{
+                $for(encludes)$
+                    $encludes$$sep$\\
+                $endfor$
+            }
         $endif$
     \end{letter}
 \end{document}

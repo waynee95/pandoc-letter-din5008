@@ -18,7 +18,9 @@ email: max.mustermann@beispiel.de
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
-subsubject: Untertitel vom Brief
+subsubject:
+  - Untertitel 1
+  - Untertietel 2
 return-address:
   - Musterstraße
   - 12345 Berlin
@@ -29,7 +31,9 @@ address:
   - 12345 Musterstadt
 opening: Sehr geehrte Damen und Herren,
 closing: Mit freundlichen Grüßen
-encludes: Muster, Muster, Muster
+encludes:
+  - Anlage 1
+  - Anlage 2
 ---
 
 ```

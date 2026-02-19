@@ -5,7 +5,9 @@ email: max.mustermann@beispiel.de
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
-subsubject: Untertitel vom Brief
+subsubject: 
+  - Untertitel 1
+  - Untertitel 2
 return-address:
   - Musterstraße
   - 12345 Berlin
@@ -16,7 +18,9 @@ address:
   - 12345 Musterstadt
 opening: Sehr geehrte Damen und Herren,
 closing: Mit freundlichen Grüßen
-encludes: Muster, Muster, Muster
+encludes: 
+  - Anlage 1
+  - Anlage 2
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
